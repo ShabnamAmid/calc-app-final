@@ -16,6 +16,10 @@ class CalculatorTests(unittest.TestCase):
     def test_division(self):
         self.assertEqual(calculate(9, 3, "/"), 3)
 
+    def test_square_root(self):
+        self.assertEqual(calculate(9, None, "sqrt"), 3)
+        self.assertEqual(calculate(16, None, "√"), 4)
+
     def test_division_by_zero_raises_error(self):
         with self.assertRaises(ZeroDivisionError):
             calculate(10, 0, "/")

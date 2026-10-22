@@ -1,18 +1,23 @@
-"""A simple calculator supporting the four basic arithmetic operations."""
+"""A simple calculator supporting basic arithmetic operations."""
+
+import math
 
 
 def calculate(first, second, operation):
     """Calculate the result of an arithmetic operation.
 
     Args:
-        first: The first numeric operand.
-        second: The second numeric operand.
-        operation: One of '+', '-', '*', or '/'.
+        first: The first numeric operand, or the value for square root.
+        second: The second numeric operand. It is ignored for square root.
+        operation: One of '+', '-', '*', '/', 'sqrt', or '√'.
 
     Raises:
-        ValueError: If the operation is not supported.
+        ValueError: If the operation is not supported or the square root
+            operand is negative.
         ZeroDivisionError: If division by zero is attempted.
     """
+    if operation in ("sqrt", "√"):
+        return math.sqrt(first)
     if operation == "+":
         return first + second
     if operation == "-":
